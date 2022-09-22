@@ -17,3 +17,7 @@ test('Encode a string ', () => {
 test('Ignore whitespaces', () => {
   expect(ceasarCipher('hello world')).toBe('uryyb jbeyq');
 });
+
+test('Ignore punctuation marks', () => {
+  expect(ceasarCipher('he;ll!o wor!ld')).toBe('uryyb jbeyq');
+});

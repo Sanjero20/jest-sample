@@ -7,9 +7,15 @@ function ceasarCipher(word, shift = 13) {
 
   word = [...word];
   word.forEach(char => {
-    const letterIndex = alphabet.indexOf(char);
-    const shiftIndex = (letterIndex + shift) % 26;
-    code.push(alphabet[shiftIndex]);
+    if (!alphabet.includes(char)) {
+      if (char == ' ') {
+        code.push(' ');
+      }
+    } else {
+      const letterIndex = alphabet.indexOf(char);
+      const shiftIndex = (letterIndex + shift) % 26;
+      code.push(alphabet[shiftIndex]);
+    }
   });
 
   return code.join('');
